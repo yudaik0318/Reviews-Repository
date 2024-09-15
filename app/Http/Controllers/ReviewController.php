@@ -10,6 +10,6 @@ class ReviewController extends Controller
 {
     public function index(Review $review)
     {
-    return $review->get();
+        return view('reviews.index')->with(['reviews' => $review->getByLimit()]);
     }
 }
