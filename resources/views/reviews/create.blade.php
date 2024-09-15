@@ -11,7 +11,7 @@
     </head>
     <body class="antialiased">
         <h1>Review Name</h1>
-        <form action="/reviews" method="POST">
+        <form action="/reviews" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="title">
                 <h2>Title</h2>
@@ -20,6 +20,9 @@
             <div class="body">
                 <h2>Body</h2>
                 <textarea name="review[body]" placeholder="今日も1日お疲れさまでした。"></textarea>
+            </div>
+            <div class="image">
+                <input type="file" name="image">
             </div>
             <input type="submit" value="store">
         </form>
