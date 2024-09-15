@@ -11,7 +11,8 @@ class Review extends Model
     
     protected $fillable = [
         'title',
-        'body'
+        'body',
+        'image_path'
         ];
     
     public function getByLimit(int $limit_count = 10)

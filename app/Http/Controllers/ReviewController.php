@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Review;
+use Cloudinary;
 
 class ReviewController extends Controller
 {
@@ -26,7 +27,9 @@ class ReviewController extends Controller
     public function store(Request $request, Review $review)
     {
         $input = $request['review'];
+        $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+        $input += ['image_path' => $image_url];
         $review->fill($input)->save();
-        return redirect('/review/' . $review->id);
+        return redirect('/reviews/' . $review->id);
     }
 }
