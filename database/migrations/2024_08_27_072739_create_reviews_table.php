@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->nullable()->constrained();
             $table->foreignId('game_id')->nullable()->constrained();
+            $table->string('title', 50);
             $table->string('body', 300);
             $table->string('image_path', 50)->nullable();
             $table->timestamps();
