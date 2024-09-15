@@ -11,6 +11,7 @@
     </head>
     <body class="antialiased">
         <h1>ChelseaReview</h1>
+        <a href="/reviews/create">create</a>
         <div class='reviews'>
             @foreach ($reviews as $review)
                 <div class='review'>
