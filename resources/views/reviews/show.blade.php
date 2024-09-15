@@ -10,14 +10,17 @@
 
     </head>
     <body class="antialiased">
-        <h1>ChelseaReview</h1>
-        <div class='reviews'>
-            @foreach ($reviews as $review)
-                <div class='review'>
-                    <a href="/reviews/{{ $review->id }}"><h2 class='title'>{{ $review->title }}</h2></a>
-                    <p class='body'>{{ $review->body }}</p>
-                </div>
-            @endforeach
+        <h1 class='title'>
+            {{ $review->title }}
+        </h1>
+        <div class='content'>
+            <div class='content_review'>
+                <h3>本文</h3>
+                <p class='body'>{{ $review->body }}</p>
+            </div>
+        </div>
+        <div class='footer'>
+            <a href="/">戻る</a>
         </div>
     </body>
 </html>
